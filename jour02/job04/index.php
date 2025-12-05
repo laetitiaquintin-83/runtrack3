@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./script.js"></script>
+    
   </head>
-  <body>
- <button id="monBouton">Clique-moi</button>
-<p id="message"></p>
+  <textarea id = "keylogger"></textarea>
+
+ 
+<script src="./script.js"></script>
   </body>
 </html>
