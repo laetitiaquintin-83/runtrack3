@@ -1,0 +1,52 @@
+body {
+    min-height: 4096px;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+
+    background-color: #ffffff;
+    color: transparent;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    opacity: 0;
+    background: #f0f0f0;
+
+    transition: opacity 0.5s ease;
+
+    --scroll: 0%
+
+    body.plateforme-mode {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+
+    body.plateforme-mode footer {
+        opacity: 1;
+        color: #fff;
+        border-top: 2px solid #00C4CC;
+
+        background: linear-gradient(to right, #00C4CC var(--scroll), #333 0);
+
+    }
+    .content {
+        display: none;
+        text-align: center;
+        padding-top: 20vh;
+    }
+
+    body.plateforme-mode .content {
+        display: block;
+    }
+}
