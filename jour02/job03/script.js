@@ -1,9 +1,10 @@
-var compteur = 0;
-
-function addone() {
-    compteur = compteur + 1;
-    document.getElementById("compteur").textContent = compteur;
-
+const button = document.getElementById("button");
+if (button) {
+    function addone() {
+        const compteur = document.getElementById("compteur");
+        if (compteur)
+            compteur.textcontent++;
+    }
+    button.addEventListener("click", addone);
 }
-document.getElementById("button").addEventListener("click", addone);
 

@@ -34,6 +34,6 @@
             // 4. On envoie ce pourcentage au CSS via la variable --scroll
             footer.style.setProperty('--scroll', scrollPercent + '%');
         });
-  <script src="./script.js"></script>
+    </script>
 </body>
 </html>
