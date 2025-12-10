@@ -28,3 +28,20 @@ const resultat = jsonValueKey(maChaineJson, "city");
 
 // Affichage du résultat
 console.log(resultat); // Affiche : Marseille
+
+// Afficher dans la page
+const div = document.getElementById('resultats');
+div.innerHTML = `<div class="result"><strong>Ville trouvée:</strong> ${resultat}</div>`;
+
+// Afficher d'autres valeurs
+const nom = jsonValueKey(maChaineJson, "name");
+const address = jsonValueKey(maChaineJson, "address");
+const staff = jsonValueKey(maChaineJson, "nb_staff");
+const creation = jsonValueKey(maChaineJson, "creation");
+
+div.innerHTML += `
+    <div class="result"><strong>Nom:</strong> ${nom}</div>
+    <div class="result"><strong>Adresse:</strong> ${address}</div>
+    <div class="result"><strong>Nombre de staff:</strong> ${staff}</div>
+    <div class="result"><strong>Création:</strong> ${creation}</div>
+`;
