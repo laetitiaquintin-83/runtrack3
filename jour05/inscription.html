@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        max-width: 500px;
+        margin: auto;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .error-msg {
+        color: #d9534f;
+        font-size: 0.85em;
+        margin-top: 5px;
+        display: none;
+      }
+      input.invalid {
+        border-color: #d9534f;
+        background-color: #f9d6d5;
+      }
+      input.valid {
+        border-color: #5cb85c;
+        background-color: #dff0d8;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Inscription</h2>
+
+    <form id="registerForm" novalidate>
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required />
+        <span class="error-msg" id="error-nom"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" required />
+        <span class="error-msg" id="error-prenom"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+        <span class="error-msg" id="error-email"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" required />
+        <span class="error-msg" id="error-password"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="adresse">Adresse</label>
+        <input type="text" id="adresse" name="adresse" required />
+        <span class="error-msg" id="error-adresse"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="cp">Code Postal</label>
+        <input type="text" id="cp" name="cp" maxlength="5" required />
+        <span class="error-msg" id="error-cp"></span>
+      </div>
+
+      <button type="submit">S'inscrire</button>
+    </form>
+
+    <script>
+      // Fonction de validation réutilisable
+      const validateInput = (input, regex, errorId, specificMsg) => {
+        const errorSpan = document.getElementById(errorId);
+        const value = input.value.trim();
+
+        if (value === "") {
+          input.className = "invalid";
+          errorSpan.textContent = "Ce champ est obligatoire.";
+          errorSpan.style.display = "block";
+          return false;
+        }
+
+        if (!regex.test(value)) {
+          input.className = "invalid";
+          errorSpan.textContent = specificMsg;
+          errorSpan.style.display = "block";
+          return false;
+        }
+
+        // Si tout est bon
+        input.className = "valid";
+        errorSpan.style.display = "none";
+        return true;
+      };
+
+      // --- Définition des Regex et Écouteurs ---
+
+      // 1. Nom & Prénom : Lettres seulement, tirets autorisés, min 2 caractères
+      const nameRegex = /^[a-zA-ZÀ-ÿ\s-]{2,}$/;
+
+      document.getElementById("nom").addEventListener("input", function () {
+        validateInput(
+          this,
+          nameRegex,
+          "error-nom",
+          "Le nom doit contenir au moins 2 lettres (pas de chiffres)."
+        );
+      });
+
+      document.getElementById("prenom").addEventListener("input", function () {
+        validateInput(
+          this,
+          nameRegex,
+          "error-prenom",
+          "Le prénom doit contenir au moins 2 lettres."
+        );
+      });
+
+      // 2. Email : Format standard
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      document.getElementById("email").addEventListener("input", function () {
+        validateInput(
+          this,
+          emailRegex,
+          "error-email",
+          "Veuillez entrer une adresse email valide (ex: moi@test.com)."
+        );
+      });
+
+      // 3. Mot de passe : Min 8 caractères, au moins 1 lettre et 1 chiffre
+      const passRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+      document
+        .getElementById("password")
+        .addEventListener("input", function () {
+          validateInput(
+            this,
+            passRegex,
+            "error-password",
+            "Min. 8 caractères, avec au moins 1 lettre et 1 chiffre."
+          );
+        });
+
+      // 4. Adresse : Doit contenir au moins 5 caractères (chiffres et lettres autorisés)
+      const addressRegex = /^[a-zA-Z0-9À-ÿ\s,'-]{5,}$/;
+      document.getElementById("adresse").addEventListener("input", function () {
+        validateInput(
+          this,
+          addressRegex,
+          "error-adresse",
+          "L'adresse semble incomplète."
+        );
+      });
+
+      // 5. Code Postal : Exactement 5 chiffres
+      const cpRegex = /^[0-9]{5}$/;
+      document.getElementById("cp").addEventListener("input", function () {
+        validateInput(
+          this,
+          cpRegex,
+          "error-cp",
+          "Le code postal doit être composé de 5 chiffres."
+        );
+      });
+
+      // Gestionnaire de soumission global
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", function (e) {
+          // Simulation de vérification finale
+          const inputs = document.querySelectorAll("input");
+          let hasError = false;
+
+          inputs.forEach((input) => {
+            // On déclenche l'événement 'input' manuellement pour afficher les erreurs si le champ est vide au clic
+            input.dispatchEvent(new Event("input"));
+            if (input.classList.contains("invalid")) {
+              hasError = true;
+            }
+          });
+
+          if (hasError) {
+            e.preventDefault(); // Bloque l'envoi
+          } else {
+            alert("Formulaire valide ! Envoi en cours...");
+          }
+        });
+    </script>
+  </body>
+</html>

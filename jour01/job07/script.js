@@ -20,22 +20,29 @@ function jourtravaille(date) {
     ];
 
     const dateFormatee = `${jour}/${mois}`;
+    let message;
 
     if (annee === 2020 && joursFeries.includes(dateFormatee)) {
-        console.log(`le ${jour} ${mois} ${annee} est un jour férié`);
-
+        message = `le ${jour}/${mois}/${annee} est un jour férié`;
+        console.log(message);
     }
     else if (jourSemaine === 0 || jourSemaine === 6) {
-        console.log(`Non, ${jour} ${mois} ${annee} est un week end`);
+        message = `Non, ${jour}/${mois}/${annee} est un week end`;
+        console.log(message);
     }
     else {
-        console.log(`oui, ${jour} ${mois} ${annee} est un jour travaillé`);
+        message = `oui, ${jour}/${mois}/${annee} est un jour travaillé`;
+        console.log(message);
     }
 
+    const div = document.getElementById('result');
+    if (div) {
+        div.innerHTML += `<p>${message}</p>`;
+    }
 }
+
 // Tests
 jourtravaille(new Date(2020, 0, 1)); //1er janvier 2020 - jour férié
 jourtravaille(new Date(2020, 6, 14)); //14 juillet 2020 - jour férié
 jourtravaille(new Date(2020, 0, 4)); // 4 janvier 2020 - samedi (week end)
-jourtravaille(new Date(2020, 0, 6)); // 6 janvier 2020 
-jourtravaille(new Date(2020, 0, 6));
+jourtravaille(new Date(2020, 0, 6)); // 6 janvier 2020
