@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visionneuse d'Image - Simplifiée</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="logo">Ma Visionneuse</div>
+      <div class="header-right">
+        <a class="btn-default" href="#">Héberger des images</a>
+      </div>
+    </header>
+
+    <main id="content">
+      <p>Voici votre image hébergée :</p>
+
+      <div class="image-container">
+        <a href="https://zupimages.net/up/20/19/xp07.png" target="_blank">
+          <img
+            src="https://zupimages.net/up/20/19/xp07.png"
+            alt="Image hébergée"
+            id="main-image"
+          />
+        </a>
+      </div>
+
+      <div id="share">
+        <h3>Liens de partage</h3>
+        <table>
+          <tbody>
+            <tr>
+              <td><label for="url-viewer">Lien vers l'image :</label></td>
+              <td>
+                <input
+                  class="copy-input"
+                  type="text"
+                  value="https://zupimages.net/viewer.php?id=20/19/xp07.png"
+                  readonly
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="url-direct">Lien direct :</label></td>
+              <td>
+                <input
+                  class="copy-input"
+                  type="text"
+                  value="https://zupimages.net/up/20/19/xp07.png"
+                  readonly
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="code-bbcode">BBCode (forum) :</label></td>
+              <td>
+                <input
+                  class="copy-input"
+                  type="text"
+                  value="[url=https://zupimages.net/viewer.php?id=20/19/xp07.png][img]https://zupimages.net/up/20/19/xp07.png[/img][/url]"
+                  readonly
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="code-html">HTML (site) :</label></td>
+              <td>
+                <input
+                  class="copy-input"
+                  type="text"
+                  value='<a href="https://zupimages.net/viewer.php?id=20/19/xp07.png"><img src="https://zupimages.net/up/20/19/xp07.png" alt="" /></a>'
+                  readonly
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

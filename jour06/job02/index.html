@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice La Plateforme</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Mon Site</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="link-accueil" href="#">Accueil</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="jumbotron" id="myJumbotron">
+      <h1 class="display-4">Bonjour, monde!</h1>
+      <p class="lead" id="jumbo-text">
+        Ceci est un simple jumbotron pour l'exercice.
+      </p>
+      <hr class="my-4" />
+      <button class="btn btn-primary btn-lg" id="btn-reboot" role="button">
+        Rebooter le Monde
+      </button>
+      <div
+        class="spinner-border text-primary ml-3"
+        id="main-spinner"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://i.pinimg.com/736x/b3/b5/97/b3b59794fd2dc87e0cfdd9c4fec3f4ce.jpg"
+              class="card-img-top"
+              alt="Papillon"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Papillon</h5>
+              <p class="card-text">Un beau papillon numérique.</p>
+              <button class="btn btn-primary" id="btn-papillon">Acheter</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+
+          <div class="mt-4">
+            <button class="btn btn-sm btn-danger" id="btn-progress-minus">
+              -
+            </button>
+            <button class="btn btn-sm btn-success" id="btn-progress-plus">
+              +
+            </button>
+            <div class="progress mt-2">
+              <div
+                class="progress-bar"
+                id="my-progress-bar"
+                role="progressbar"
+                style="width: 50%"
+                aria-valuenow="50"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="list-group" id="my-list-group">
+            <a href="#" class="list-group-item list-group-item-action active"
+              >Cras justo odio</a
+            >
+            <a href="#" class="list-group-item list-group-item-action"
+              >Dapibus ac facilisis in</a
+            >
+            <a href="#" class="list-group-item list-group-item-action"
+              >Morbi leo risus</a
+            >
+            <a href="#" class="list-group-item list-group-item-action"
+              >Porta ac consectetur ac</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <h5>Formulaire Infos (Code DGC)</h5>
+          <form id="form-infos">
+            <div class="form-group">
+              <label>Nom</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputName"
+                placeholder="Votre nom"
+              />
+            </div>
+            <div class="form-group">
+              <label>Prénom</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputFirstname"
+                placeholder="Votre prénom"
+              />
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-6">
+          <h5>Connexion (Change Spinner)</h5>
+          <form id="form-login">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" id="inputEmail" />
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" id="inputPassword" />
+            </div>
+            <button type="submit" class="btn btn-primary">Valider</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="papillonModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmation</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Vous avez acheté un papillon !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="dgcModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Code Secret Activé !</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="dgc-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
