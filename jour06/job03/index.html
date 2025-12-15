@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maquette Bootstrap Responsive</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      /* Styles pour visualiser la grille */
+      .grid-item {
+        border: 2px solid #555;
+        padding: 30px;
+        margin-bottom: 20px; /* Espace entre les lignes/colonnes */
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        min-height: 150px; /* Pour mieux voir les blocs */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Couleurs pour les différents blocs */
+      #A,
+      #E {
+        background-color: #0d6efd; /* Bleu Primaire */
+      }
+      #B {
+        background-color: #6f42c1; /* Violet */
+      }
+      #C {
+        background-color: #fd7e14; /* Orange */
+      }
+      #D {
+        background-color: #20c997; /* Vert-menthe */
+      }
+
+      /* Média query pour expliquer la transition */
+      @media (min-width: 992px) {
+        .explainer-desktop {
+          display: block;
+        }
+        .explainer-mobile {
+          display: none;
+        }
+      }
+      @media (max-width: 991.98px) {
+        .explainer-desktop {
+          display: none;
+        }
+        .explainer-mobile {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Maquette Responsive Bootstrap</h2>
+
+      <div class="alert alert-info text-center">
+        <div class="explainer-desktop">
+          **Écran Large (Desktop) :** Les blocs B, C et D sont sur une seule
+          ligne (1/3 chacun).
+        </div>
+        <div class="explainer-mobile">
+          **Écran Étroit (Mobile) :** Les blocs B, C et D s'empilent
+          verticalement (toute la largeur). Redimensionnez votre fenêtre pour
+          voir le changement !
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="grid-item" id="A">Bloc A (col-12)</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          <div class="grid-item" id="B">Bloc B (col-12 col-lg-4)</div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <div class="grid-item" id="C">Bloc C (col-12 col-lg-4)</div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <div class="grid-item" id="D">Bloc D (col-12 col-lg-4)</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="grid-item" id="E">Bloc E (col-12)</div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
