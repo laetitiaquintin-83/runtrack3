@@ -1,110 +1,69 @@
-/* Réinitialisation de base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
+/* Fond gris général de la page */
 body {
-    background-color: #f7f7f7;
+    background-color: #dcdcdc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #333;
 }
 
-/* --- Header --- */
-#header {
-    height: 60px;
-    background-color: #1b212b;
-    color: #969191;
-    border-top: 3px solid #141921;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    margin-bottom: 30px;
+/* Espacement global pour petits écrans */
+.main-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #fff;
+/* Titre LaPlateforme_ fin */
+h1.display-4 {
+    font-weight: 300;
+    color: #444;
 }
 
-/* Bouton bleu */
-.btn-default {
-    background: linear-gradient(to bottom, #62aec5, #479cb9);
-    border-radius: 3px;
-    color: #d3f7ff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 10px 18px;
-    text-decoration: none;
-    transition: color 0.2s;
+/* Le fond gris clair du bloc central "Bonjour monde" */
+.bg-light-gray {
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
 }
 
-.btn-default:hover {
-    color: #fff;
+/* Taille de police pour les paragraphes de description */
+.small-text {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
-/* --- Contenu Principal --- */
-#content {
-    text-align: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+/* Ajustement de l'image Papillon */
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
 }
 
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #141921;
-    margin: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* --- Section Partage --- */
-#share {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    display: inline-block;
-    /* Pour centrer le bloc */
-}
-
-#share h3 {
-    margin-bottom: 15px;
-    color: #479cb9;
-}
-
-table {
-    margin: 0 auto;
-    border-collapse: collapse;
-}
-
-td {
-    padding: 8px;
-    text-align: left;
-}
-
-label {
-    font-weight: bold;
+/* Bouton bleu papillon */
+#btn-papillon {
     font-size: 0.9rem;
 }
 
-/* Style des champs input */
-input[type="text"] {
-    width: 400px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-    color: #555;
-    cursor: pointer;
+/* Barre de progression jaune rayée */
+.progress-bar-striped {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-size: 1rem 1rem;
 }
 
-input[type="text"]:focus {
-    border-color: #62aec5;
-    background-color: #fff;
-    outline: none;
+/* Input groups gris */
+.input-group-text {
+    background-color: #e9ecef;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+/* Pagination clickable area un peu plus large sur mobile */
+.pagination .page-link {
+    padding: 0.5rem 0.75rem;
+}
+
+/* Ajuster le contenu du bloc central sur petits écrans */
+@media (max-width: 576px) {
+    .bg-light-gray {
+        padding: 1rem !important;
+    }
+    .card-img-top {
+        height: 140px;
+    }
 }

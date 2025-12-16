@@ -1,20 +1,21 @@
-// On attend que la page soit complètement chargée
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
 
-    // On sélectionne tous les champs de texte qui ont la classe 'copy-input'
-    const inputs = document.querySelectorAll('.copy-input');
-
-    // Pour chaque champ, on ajoute une écoute d'événement "click"
-    inputs.forEach(input => {
-        input.addEventListener('click', function () {
-            // Cette fonction sélectionne tout le texte à l'intérieur
-            this.select();
-
-            // Optionnel : Copier directement dans le presse-papier
-            // navigator.clipboard.writeText(this.value);
-            // alert("Lien copié !");
+    // Interaction Bouton Papillon
+    const papillonBtn = document.getElementById('btn-papillon');
+    if (papillonBtn) {
+        papillonBtn.addEventListener('click', () => {
+            alert('Papillon commandé avec succès !');
         });
-    });
+    }
 
-    console.log("Le script est chargé et prêt.");
+    // Interaction Bouton Reboot
+    const rebootBtn = document.querySelector('.btn-danger');
+    if (rebootBtn) {
+        rebootBtn.addEventListener('click', () => {
+            let confirmReboot = confirm("Voulez-vous vraiment rebooter le Monde ?");
+            if (confirmReboot) {
+                alert("Le monde redémarre... Veuillez patienter.");
+            }
+        });
+    }
 });

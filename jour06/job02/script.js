@@ -11,15 +11,15 @@ $(document).ready(function () {
 
 
     // --- 3. Bouton "Rebooter le Monde" (Blade Runner) ---
-    // Tableau de citations du film Blade Runner (1982)
+    // Tableau de citations du film Blade Runner (1982) en français
     const bladeRunnerQuotes = [
-        "I've seen things you people wouldn't believe.",
-        "Attack ships on fire off the shoulder of Orion.",
-        "I watched C-beams glitter in the dark near the Tannhäuser Gate.",
-        "All those moments will be lost in time, like tears in rain.",
-        "Time to die.",
-        "Wake up, time to die.",
-        "It's too bad she won't live! But then again, who does?"
+        "J’ai vu des choses que vous ne pourriez pas croire.",
+        "Des vaisseaux en flammes au large de l’épaule d’Orion.",
+        "J’ai vu des rayons C étinceler dans l’obscurité près de la porte de Tannhäuser.",
+        "Tous ces moments se perdront dans le temps, comme des larmes sous la pluie.",
+        "Il est temps de mourir.",
+        "Réveille-toi, il est temps de mourir.",
+        "C’est dommage qu’elle ne vivra pas ! Mais, après tout, qui vit ?"
     ];
 
     $('#btn-reboot').click(function () {
