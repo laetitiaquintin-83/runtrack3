@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire d'inscription Materialize</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="teal lighten-1">
+        <div class="nav-wrapper container">
+          <a href="index.html" class="brand-logo left">MonSite</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html">Inscription</a></li>
+            <li><a href="index.html">Connexion</a></li>
+            <li><a href="index.html">Rechercher</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="row">
+        <div class="col s12">
+          <h4 class="center-align">Création de compte</h4>
+        </div>
+      </div>
+
+      <section class="row">
+        <form action="index.html" method="post" class="col s12">
+          <div class="row">
+            <div class="col s12">
+              <label>Civilité :</label>
+              <p>
+                <label>
+                  <input
+                    class="with-gap"
+                    name="civilite"
+                    type="radio"
+                    value="mme"
+                  />
+                  <span>Mme</span>
+                </label>
+                <label>
+                  <input
+                    class="with-gap"
+                    name="civilite"
+                    type="radio"
+                    value="m"
+                  />
+                  <span>M.</span>
+                </label>
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input
+                id="prenom"
+                name="prenom"
+                type="text"
+                class="validate"
+                required
+              />
+              <label for="prenom">Prénom</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                id="nom"
+                name="nom"
+                type="text"
+                class="validate"
+                required
+              />
+              <label for="nom">Nom</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="adresse" name="adresse" type="text" class="validate" />
+              <label for="adresse">Adresse</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="validate"
+                required
+              />
+              <label for="email">Adresse Email</label>
+              <span
+                class="helper-text"
+                data-error="Email invalide"
+                data-success="Ok"
+              ></span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="validate"
+                required
+              />
+              <label for="password">Mot de passe</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                id="confirm_password"
+                name="confirm_password"
+                type="password"
+                class="validate"
+                required
+              />
+              <label for="confirm_password">Confirmation</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <label>Vos passions :</label>
+              <p>
+                <label>
+                  <input type="checkbox" name="passions" value="informatique" />
+                  <span>Informatique</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="passions" value="voyages" />
+                  <span>Voyages</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="passions" value="sport" />
+                  <span>Sport</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="passions" value="lecture" />
+                  <span>Lecture</span>
+                </label>
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 center-align">
+              <button
+                class="btn waves-effect waves-light teal"
+                type="submit"
+                name="action"
+              >
+                Valider l'inscription
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="page-footer teal lighten-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Mon Site</h5>
+            <p class="grey-text text-lighten-4">Merci de votre visite.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Liens utiles</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="index.html"
+                  >Accueil</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="index.html"
+                  >Inscription</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="index.html"
+                  >Connexion</a
+                >
+              </li>
+              <li>
+                <a class="grey-text text-lighten-3" href="index.html"
+                  >Rechercher</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">© 2023 Copyright</div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
